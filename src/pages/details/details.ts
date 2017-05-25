@@ -13,15 +13,12 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
   templateUrl: 'details.html',
 })
 export class DetailsPage {
-
-  constructor(private viewCtrl : ViewController,
-              public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailsPage');
   }
   returnToParent() {
-    this.viewCtrl.dismiss();
+    this.navCtrl.setRoot('HomePage');
   }
 }
