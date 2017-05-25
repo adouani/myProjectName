@@ -1,17 +1,24 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {IonicPage, ModalController, NavController, NavParams} from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-second',
   templateUrl: 'second.html',
 })
 export class SecondPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  message:string;
+  constructor(private navCtrl: NavController,
+              private navParams: NavParams,
+              private modalCtrl:ModalController) {
+    this.message = this.navParams.get('message');
+    console.log(this.message);
+    console.log('call');
   }
-
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SecondPage');
+    console.log('ionViewDidLoad');
   }
 
+  showModal() {
+      this.modalCtrl.create('DetailsPage').present();
+  }
 }

@@ -15,6 +15,9 @@ export class HomePage {
     console.log('ionViewDidLoad HomePage');
   }
   navigateSecondPage() {
-    this.navCtrl.push('SecondPage');
+    this.navCtrl.push('SecondPage', {
+      message : 'Hello !',
+      value:1
+    });
   }
 }
